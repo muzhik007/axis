@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lumen Studio — фотографія портретів, весіль та editorial. Київ.">
+  <title>Lumen Studio — App Shell Z-Axis</title>
+  <style>
+    :root {
+      --color-cream: #f4efe6;
+      --color-wheat: #e8dfd0;
+      --color-charcoal: #141414;
+      --color-gold: #b8956c;
+      --color-ink: #1c1c1c;
+      --color-muted: #6b6560;
+      --color-white: #faf8f5;
+      --font-display: 'Syne', system-ui, sans-serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-pill: 999px;
+      --space-gutter: clamp(1rem, 4vw, 2.5rem);
+      --header-h: 72px;
+      --dock-h: 64px;
+      --shell-sticky-top: 84px;
+      --z-chrome: 300;
+      --z-hud: 400;
+    }
+  </style>
+  <link rel="stylesheet" href="css/design-tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="app-shell" data-app-shell style="--shell-sticky-top: 84px;">
+
+    <!-- Fixed chrome: top bar -->
+    <header class="shell-chrome shell-chrome--top">
+      <div class="shell-chrome__inner">
+        <a href="#layer-hero" class="shell-chrome__logo">Lumen</a>
+        <p class="shell-chrome__mode">
+          <span class="shell-chrome__mode-dot" aria-hidden="true"></span>
+          App Shell · Z-Axis
+        </p>
+        <a href="#layer-contact" class="shell-chrome__cta">Запис</a>
+      </div>
+    </header>
+
+    <!-- 3D scene: stacked layers -->
+    <div class="shell-scene" data-shell-scene>
+      <div class="shell-scene__grid" aria-hidden="true"></div>
+
+      <main class="z-stack" data-z-stack id="z-stack">
+
+        <section class="z-layer is-active" id="layer-hero" data-z-layer="0" data-z-label="Hero">
+          <article class="z-layer__surface z-layer__surface--cream">
+            <div class="z-layer__content">
+            <div class="hero">
+              <div class="container hero__grid">
+                <ul class="hero__categories" aria-label="Напрямки зйомок">
+                  <li class="is-active">Портрети</li>
+                  <li>Весілля</li>
+                  <li>Editorial</li>
+                  <li>Комерція</li>
+                </ul>
+                <div class="hero__main">
+                  <p class="eyebrow">Фотограф · Київ</p>
+                  <h1 class="hero__title">
+                    <span class="line-1">Capturing</span>
+                    <span class="line-2">light &amp; truth</span>
+                  </h1>
+                  <p class="hero__lead">Документую моменти з теплом і чесністю — від intimate portraits до editorial campaigns.</p>
+                  <a href="#layer-work" class="hero__cta">
+                    View Portfolio
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
+                  <div class="hero__badge">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop" alt="" width="48" height="48" loading="lazy">
+                    <blockquote>«Кожен кадр — це розмова, не постановка.»</blockquote>
+                  </div>
+                </div>
+                <div class="hero__visual">
+                  <div class="hero__frame hero__frame--tall z-float" data-z-float="12">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=560&fit=crop" alt="Портретна зйомка" width="400" height="560" fetchpriority="high">
+                  </div>
+                  <div class="hero__frame hero__frame--wide z-float" data-z-float="28">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=520&h=650&fit=crop" alt="Весільний момент" width="520" height="650" fetchpriority="high">
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="z-layer is-future" id="layer-about" data-z-layer="1" data-z-label="About">
+          <article class="z-layer__surface z-layer__surface--dark">
+            <div class="z-layer__content">
+            <div class="philosophy">
+              <div class="container philosophy__inner">
+                <div>
+                  <p class="eyebrow eyebrow--light">Філософія · Z1</p>
+                  <h2 class="philosophy__text">Lumen створює зображення, що переживають мить — чесно, без фільтрів і штучності.</h2>
+                  <a href="#layer-contact" class="philosophy__cta">Дізнатись більше</a>
+                </div>
+                <div class="philosophy__floats" aria-hidden="true">
+                  <div class="philosophy__float z-float" data-z-float="36"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=280&h=280&fit=crop" alt="" loading="lazy"></div>
+                  <div class="philosophy__float z-float" data-z-float="52"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=240&h=240&fit=crop" alt="" loading="lazy"></div>
+                  <div class="philosophy__float z-float" data-z-float="20"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop" alt="" loading="lazy"></div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="z-layer is-future" id="layer-services" data-z-layer="2" data-z-label="Services">
+          <article class="z-layer__surface z-layer__surface--cream">
+            <div class="z-layer__content">
+            <div class="categories">
+              <div class="container">
+                <div class="categories__head">
+                  <h2>Напрямки зйомок</h2>
+                  <span class="eyebrow">2024 — 2026</span>
+                </div>
+                <div class="categories__grid">
+                  <a href="#" class="category-card z-float" data-z-float="16">
+                    <div class="category-card__img"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop" alt="Портрети" loading="lazy"></div>
+                    <span class="category-card__label">Портрети</span>
+                  </a>
+                  <a href="#" class="category-card z-float" data-z-float="24">
+                    <div class="category-card__img"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&h=400&fit=crop" alt="Весілля" loading="lazy"></div>
+                    <span class="category-card__label">Весілля</span>
+                  </a>
+                  <a href="#" class="category-card z-float" data-z-float="32">
+                    <div class="category-card__img"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=400&fit=crop" alt="Editorial" loading="lazy"></div>
+                    <span class="category-card__label">Editorial</span>
+                  </a>
+                  <a href="#" class="category-card z-float" data-z-float="40">
+                    <div class="category-card__img"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=400&fit=crop" alt="Комерція" loading="lazy"></div>
+                    <span class="category-card__label">Комерція</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="z-layer is-future" id="layer-work" data-z-layer="3" data-z-label="Work">
+          <article class="z-layer__surface z-layer__surface--dark">
+            <div class="z-layer__content">
+            <div class="selected">
+              <div class="container">
+                <div class="selected__head">
+                  <h2>Обрані роботи</h2>
+                  <a href="#" class="eyebrow eyebrow--light">Дивитись усі →</a>
+                </div>
+                <div class="selected__track" role="list">
+                  <article class="selected__item z-float" data-z-float="18" role="listitem">
+                    <div class="selected__frame"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=560&h=740&fit=crop" alt="Golden hour portrait" loading="lazy"></div>
+                    <div class="selected__meta"><strong>Golden Hour</strong><span>Портрет</span></div>
+                  </article>
+                  <article class="selected__item z-float" data-z-float="26" role="listitem">
+                    <div class="selected__frame"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=560&h=740&fit=crop" alt="Vows in the garden" loading="lazy"></div>
+                    <div class="selected__meta"><strong>Garden Vows</strong><span>Весілля</span></div>
+                  </article>
+                  <article class="selected__item z-float" data-z-float="34" role="listitem">
+                    <div class="selected__frame"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=560&h=740&fit=crop" alt="Editorial winter" loading="lazy"></div>
+                    <div class="selected__meta"><strong>Winter Edit</strong><span>Editorial</span></div>
+                  </article>
+                  <article class="selected__item z-float" data-z-float="42" role="listitem">
+                    <div class="selected__frame"><img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=560&h=740&fit=crop" alt="Studio minimal" loading="lazy"></div>
+                    <div class="selected__meta"><strong>Studio No. 7</strong><span>Комерція</span></div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="z-layer is-future" id="layer-quote" data-z-layer="4" data-z-label="Quote">
+          <article class="z-layer__surface z-layer__surface--cream">
+            <div class="z-layer__content">
+            <div class="testimonial">
+              <div class="container testimonial__grid">
+                <div>
+                  <p class="testimonial__quote-mark" aria-hidden="true">"</p>
+                  <h2 class="visually-hidden">Відгук клієнта</h2>
+                  <blockquote class="testimonial__text">Фотографії від Lumen — це не просто красиві кадри. Це відчуття, що ти знову в той момент.</blockquote>
+                  <div class="testimonial__author">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=112&h=112&fit=crop" alt="" width="56" height="56" loading="lazy">
+                    <div><strong>Олена &amp; Марко</strong><span>Весільна зйомка · 2025</span></div>
+                  </div>
+                </div>
+                <div class="testimonial__visual" aria-hidden="true">
+                  <img class="z-float" data-z-float="14" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=300&h=400&fit=crop" alt="" loading="lazy">
+                  <img class="z-float" data-z-float="28" src="https://images.unsplash.com/photo-1522673606300-8d4833fde58f?w=300&h=400&fit=crop" alt="" loading="lazy">
+                  <img class="z-float" data-z-float="42" src="https://images.unsplash.com/photo-1469371670807-b013c1097a5b?w=300&h=400&fit=crop" alt="" loading="lazy">
+                </div>
+              </div>
+            </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="z-layer is-future" id="layer-projects" data-z-layer="5" data-z-label="Projects">
+          <article class="z-layer__surface z-layer__surface--cream">
+            <div class="z-layer__content">
+            <div class="curated">
+              <div class="container">
+                <div class="curated__head"><h2>Обрані проєкти</h2></div>
+                <div class="curated__list" role="list">
+                  <a href="#" class="curated__item" role="listitem">
+                    <span class="curated__num">01</span>
+                    <span class="curated__title">Intimate Portraits — Studio Series</span>
+                    <span class="curated__tag">Портрет</span>
+                    <span class="curated__arrow" aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="curated__item" role="listitem">
+                    <span class="curated__num">02</span>
+                    <span class="curated__title">Carpathian Wedding — Anna &amp; Dmytro</span>
+                    <span class="curated__tag">Весілля</span>
+                    <span class="curated__arrow" aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="curated__item" role="listitem">
+                    <span class="curated__num">03</span>
+                    <span class="curated__title">Vogue UA — Winter Editorial</span>
+                    <span class="curated__tag">Editorial</span>
+                    <span class="curated__arrow" aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="curated__item" role="listitem">
+                    <span class="curated__num">04</span>
+                    <span class="curated__title">Artisan Coffee — Brand Campaign</span>
+                    <span class="curated__tag">Комерція</span>
+                    <span class="curated__arrow" aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="z-layer is-future" id="layer-contact" data-z-layer="6" data-z-label="Contact">
+          <article class="z-layer__surface z-layer__surface--cream">
+            <div class="z-layer__content">
+            <footer class="site-footer">
+              <div class="container">
+                <form class="site-footer__newsletter" aria-label="Підписка">
+                  <input type="email" placeholder="your@email.com" aria-label="Email">
+                  <button type="submit" aria-label="Підписатись">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </button>
+                </form>
+                <div class="site-footer__grid">
+                  <div>
+                    <strong>Lumen Studio</strong>
+                    <p>Фотографія, що залишає слід. Портрети, весілля, editorial та комерційні проєкти.</p>
+                    <div class="site-footer__socials">
+                      <a href="#">Instagram</a>
+                      <a href="#">Behance</a>
+                    </div>
+                  </div>
+                  <div>
+                    <strong>Контакт</strong>
+                    <p>+380 67 000 00 00<br>hello@lumen.studio<br>Київ</p>
+                  </div>
+                  <div>
+                    <strong>Години</strong>
+                    <p>Пн — Пт: 10:00 — 19:00</p>
+                  </div>
+                </div>
+                <p class="site-footer__wordmark" aria-hidden="true">LUMEN</p>
+                <div class="site-footer__legal">
+                  <span>© 2026 Lumen Studio · App Shell Z-Axis demo</span>
+                </div>
+              </div>
+            </footer>
+            </div>
+          </article>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- Fixed chrome: bottom dock -->
+    <nav class="shell-chrome shell-chrome--dock" aria-label="Навігація по шарах">
+      <div class="z-dock">
+        <a href="#layer-hero" class="z-dock__link is-active" data-z-goto="layer-hero" aria-current="true"><span>Z0</span>Hero</a>
+        <a href="#layer-about" class="z-dock__link" data-z-goto="layer-about"><span>Z1</span>About</a>
+        <a href="#layer-services" class="z-dock__link" data-z-goto="layer-services"><span>Z2</span>Services</a>
+        <a href="#layer-work" class="z-dock__link" data-z-goto="layer-work"><span>Z3</span>Work</a>
+        <a href="#layer-quote" class="z-dock__link" data-z-goto="layer-quote"><span>Z4</span>Quote</a>
+        <a href="#layer-projects" class="z-dock__link" data-z-goto="layer-projects"><span>Z5</span>List</a>
+        <a href="#layer-contact" class="z-dock__link" data-z-goto="layer-contact"><span>Z6</span>Contact</a>
+      </div>
+    </nav>
+
+    <!-- Depth HUD -->
+    <aside class="z-hud" aria-live="polite">
+      <span class="z-hud__depth">DEPTH <strong data-z-hud-depth>0</strong></span>
+      <span class="z-hud__label" data-z-hud-label>Hero</span>
+    </aside>
+
+  </div>
+
+  <script src="js/app-shell.js" defer></script>
+</body>
+</html>
